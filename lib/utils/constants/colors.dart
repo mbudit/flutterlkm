@@ -8,9 +8,9 @@ class TColors {
 
   // Warna Aplikasi
 
-  static const Color appPrimary = Color(0xFFFF6501);
-  static const Color appSecondary = Color(0xFFA6CF45);
-  static const Color appAccent = Color(0xFF00A2EA);
+  static const Color appPrimary = Color(0xFF482AF3);
+  static const Color appSecondary = Color(0xFFAC2AF3);
+  static const Color appAccent = Color(0xFF2A71F3);
 
   // Warna Gradien
 

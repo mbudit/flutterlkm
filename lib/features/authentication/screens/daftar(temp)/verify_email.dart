@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterlkm/common/widgets/success_screen/success_screen.dart';
 import 'package:flutterlkm/features/authentication/screens/login%20(temp)/login.dart';
+import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/image_strings.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
 import 'package:flutterlkm/utils/constants/text_strings.dart';
@@ -69,6 +70,10 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor: TColors.appSecondary,
+                  side: const BorderSide(color: TColors.appSecondary),
+                ),
                   onPressed: () => Get.to(() => SuccessScreen(
                         image: TImages.verifyEmailSuccess,
                         title: TTexts.yourAccountCreatedTitle,

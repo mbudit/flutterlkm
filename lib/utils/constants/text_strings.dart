@@ -10,13 +10,13 @@ class TTexts {
   static const String tContinue = "Continue";
 
   // -- ONBOARDING TEXT
-  static const String onBoardingTitle1 = "Menghubungi ambulan jadi lebih mudah";
-  static const String onBoardingTitle2 = "Temukan rumah sakit terdekat";
-  static const String onBoardingTitle3 = "Informasi mengenai rumah sakit terdekat";
+  static const String onBoardingTitle1 = "Tidak Perlu Repot-Repot Kerumah Sakit";
+  static const String onBoardingTitle2 = "Mengirmkan Petugas Kesehatan Terdekat";
+  static const String onBoardingTitle3 = "Informasi PUSKESMAS Terdekat";
 
-  static const String onBoardingSubTitle1 = "Kami memudahakan anda untuk menghubungi ambulan dalam keadaan genting";
-  static const String onBoardingSubTitle2 = "Kami akan membantu anda untuk mengetahui lokasi rumah sakit terdekat dari lokasi anda saat ini";
-  static const String onBoardingSubTitle3 = "Kami akan membantu anda untuk mengetahui lokasi rumah sakit terdekat dari lokasi anda saat ini";
+  static const String onBoardingSubTitle1 = "Kami memudahakan anda untuk tidak perlu lagi kerumah sakit bila ingin melakukan test kesehatan";
+  static const String onBoardingSubTitle2 = "Kami akan membantu anda dengan mengirimkan petugas kesehatan terdekat dari lokasi untuk melakukan pertolongan pertama";
+  static const String onBoardingSubTitle3 = "Kami akan memberikan informasi rumah Sakit atau PUSKESMAS terdekat dari lokasi anda saat ini";
 
   static const String informationTitle = "Informasi";
 

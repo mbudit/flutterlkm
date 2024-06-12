@@ -3,7 +3,6 @@ import 'package:flutterlkm/common/styles/spacing_styles.dart';
 import 'package:flutterlkm/features/authentication/screens/login%20(temp)/widgets/login_form.dart';
 import 'package:flutterlkm/features/authentication/screens/login%20(temp)/widgets/login_form_divider.dart';
 import 'package:flutterlkm/features/authentication/screens/login%20(temp)/widgets/login_header.dart';
-import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -13,14 +12,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: TColors.appBarGradient
-          ),
-        ),
-      ),
-
+      appBar: AppBar(),
       body: const SingleChildScrollView(
         child: Padding(
           padding: TSpacingStyle.paddingWithAppBarHeight,
