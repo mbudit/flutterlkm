@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
@@ -10,7 +9,6 @@ class TNewsHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final List<String> imgList = [
       'https://teramedik.com/cenews/wp-content/uploads/2022/11/Jenis-Sistem-Informasi-Kesehatan-2-e1667447489351.jpeg',
       'https://mirroradvertising.id/wp-content/uploads/2019/02/poster-kesehatan-gigi.jpg',
@@ -19,34 +17,34 @@ class TNewsHomePage extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            TTexts.hospitalNews,
-            textAlign: TextAlign.start,
-            style: TextStyle(
-              fontSize: TSizes.fontSizeMn,
-              fontWeight: FontWeight.w500
-            ),
-          ),
+      children: [
+        const Text(
+          TTexts.hospitalNews,
+          textAlign: TextAlign.start,
+          style: TextStyle(fontSize: TSizes.fontSizeMn, fontWeight: FontWeight.w500),
+        ),
 
-          const SizedBox(height: TSizes.spaceAntaraItem,),
+        const SizedBox(
+          height: TSizes.spaceAntaraItem,
+        ),
 
-          // Automation Slider News
-          CarouselSlider(
-          items: [
-            ...imgList.map((e) => Center(
-              child: Image.network(e),
-            )).toList(),
-          ],
-          options: CarouselOptions(
-            height: TSizes.heightSlider,
-            autoPlay: true,
-            autoPlayInterval: const Duration(seconds: TTimes.autoImageSliderInterval),
-            autoPlayAnimationDuration: const Duration(milliseconds: TTimes.autoImageSliderAnimation),
-            enlargeCenterPage: true,
-            enlargeFactor: TSizes.sizeFactor
-          ))
-        ],
+        // Automation Slider News
+        CarouselSlider(
+            items: [
+              ...imgList
+                  .map((e) => Center(
+                        child: Image.network(e),
+                      ))
+                  .toList(),
+            ],
+            options: CarouselOptions(
+                height: TSizes.heightSlider,
+                autoPlay: true,
+                autoPlayInterval: const Duration(seconds: TTimes.autoImageSliderInterval),
+                autoPlayAnimationDuration: const Duration(milliseconds: TTimes.autoImageSliderAnimation),
+                enlargeCenterPage: true,
+                enlargeFactor: TSizes.sizeFactor))
+      ],
     );
   }
 }
