@@ -62,7 +62,7 @@ class TTexts {
 
   // -- Home
   static const String homeAppbarTitle = "Semoga sehat selalu!";
-  static const String homeAppbarSubTitle = "User";
+  static const String homeAppbarSubTitle = "M. Budi Triono";
 
   // -- Homepage
   static const String hospitalLocation = "Rumah sakit terdekat";
