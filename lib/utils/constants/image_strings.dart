@@ -27,4 +27,9 @@ class TImages {
 
   // -- Icon RS 
   static const String hospitalIcon = "assets/icons/hospital/icons8-hospital-64.png";
+
+  // -- Gambar Banner Carousel Home
+  static const String banner1 = "assets/images/banners/banner-1.jpg";
+  static const String banner2 = "assets/images/banners/banner-2.jpg";
+  static const String banner3 = "assets/images/banners/banner-3.jpg";
 }
