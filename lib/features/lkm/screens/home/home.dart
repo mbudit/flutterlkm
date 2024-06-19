@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutterlkm/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:flutterlkm/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:flutterlkm/common/widgets/texts/section_heading.dart';
 import 'package:flutterlkm/features/lkm/screens/home/widgets/home_app_bar.dart';
+import 'package:flutterlkm/features/lkm/screens/home/widgets/home_hospital_list.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,9 +21,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   // -- AppBar --
                   THomeAppBar(),
-                  SizedBox(
-                    height: TSizes.spaceAntaraSection,
-                  ),
+                  SizedBox(height: TSizes.spaceAntaraSection),
 
                   // -- Search Bar --
                   TSearchContainer(
@@ -29,11 +29,26 @@ class HomeScreen extends StatelessWidget {
                     showBackground: true,
                     showBorder: true,
                   ),
-                  SizedBox(
-                    height: TSizes.spaceAntaraSection,
-                  ),
+                  SizedBox(height: TSizes.spaceAntaraSection),
 
                   // -- Categories --
+                  Padding(
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        
+                        // -- Heading --
+                        TSectionHeading(
+                          title: 'Klinik dan Puskesmas',
+                          showActionButton: false,
+                        ),
+                        SizedBox(height: TSizes.spaceAntaraItem),
+
+                        // -- Categories --
+                        THomeHospitalList()
+                      ],
+                    ),
+                  )
                 ],
               ),
             )
@@ -43,5 +58,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
