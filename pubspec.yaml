@@ -47,10 +47,12 @@ flutter:
 #--------------------- LOCAL ASSETS --------------------#
   assets:
     - assets/logos/
+    - assets/images/items/
     - assets/images/banners/
     - assets/icons/hospital/
     - assets/images/onboarding_images/
     - assets/images/animations/
+   
 
   #--------------- LOCAL FONTS ------------------#
   fonts:

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterlkm/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:flutterlkm/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:flutterlkm/common/widgets/item/item_card/item_card_vertical.dart';
 import 'package:flutterlkm/common/widgets/texts/section_heading.dart';
 import 'package:flutterlkm/features/lkm/screens/home/widgets/carousel_slider.dart';
 import 'package:flutterlkm/features/lkm/screens/home/widgets/home_app_bar.dart';
@@ -18,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             //// -- Header --
-            const TPrimaryHeaderContainer(
+            TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   // -- AppBar --
@@ -57,12 +58,20 @@ class HomeScreen extends StatelessWidget {
             //// -- Body --
             Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: TCarouselSlider(banners: [TImages.banner1, TImages.banner2, TImages.banner3],),
-            )
+              child: Column(
+                children: [
+                  // --- Carousel ---
+                  TCarouselSlider(banners: [TImages.banner1, TImages.banner2, TImages.banner3]),
+                  SizedBox(height: TSizes.spaceAntaraSection),
+
+                  // --- Item Card ---
+                  TItemCardVertical()
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
