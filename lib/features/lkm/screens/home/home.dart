@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutterlkm/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:flutterlkm/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:flutterlkm/common/widgets/item/item_card/item_card_vertical.dart';
+import 'package:flutterlkm/common/widgets/layouts/grid_layout.dart';
 import 'package:flutterlkm/common/widgets/texts/section_heading.dart';
 import 'package:flutterlkm/features/lkm/screens/home/widgets/carousel_slider.dart';
 import 'package:flutterlkm/features/lkm/screens/home/widgets/home_app_bar.dart';
 import 'package:flutterlkm/features/lkm/screens/home/widgets/home_hospital_list.dart';
+import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/image_strings.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
 
@@ -14,12 +16,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             //// -- Header --
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   // -- AppBar --
@@ -57,15 +59,29 @@ class HomeScreen extends StatelessWidget {
 
             //// -- Body --
             Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 children: [
                   // --- Carousel ---
-                  TCarouselSlider(banners: [TImages.banner1, TImages.banner2, TImages.banner3]),
-                  SizedBox(height: TSizes.spaceAntaraSection),
+                  const TCarouselSlider(banners: [
+                    TImages.banner1,
+                    TImages.banner2,
+                    TImages.banner3
+                  ]),
+                  const SizedBox(height: TSizes.spaceAntaraSection),
+
+                  TSectionHeading(
+                    title: 'Popular Products',
+                    textColor: TColors.black,
+                    onPressed: () {},
+                  ),
+                  const SizedBox(height: TSizes.spaceAntaraItem),
 
                   // --- Item Card ---
-                  TItemCardVertical()
+                  TGridLayout(
+                    itemCount: 4,
+                    itemBuilder: (_, index) => const TItemCardVertical(),
+                  ),
                 ],
               ),
             ),
