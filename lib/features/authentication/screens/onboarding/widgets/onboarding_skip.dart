@@ -13,7 +13,6 @@ class OnBoardingSkip extends StatelessWidget {
     return Positioned(
       top: TDeviceUtils.getAppBarHeight(),
       right: TSizes.defaultSpace,
-      child: Container(
         child: TextButton(
           onPressed: () => OnBoardingController.instance.skipPage(),
           child: const Text(
@@ -21,7 +20,6 @@ class OnBoardingSkip extends StatelessWidget {
             style: TextStyle(fontSize: 16),
           ),
         ),
-      ),
     );
   }
 }
