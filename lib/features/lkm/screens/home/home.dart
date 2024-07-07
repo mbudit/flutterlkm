@@ -50,10 +50,12 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: TSizes.spaceAntaraItem),
 
                         // -- Categories --
-                        THomeHospitalList()
+                        THomeHospitalList(),
                       ],
                     ),
-                  )
+                  ),
+
+                  SizedBox(height: TSizes.spaceAntaraSection),
                 ],
               ),
             ),
@@ -64,11 +66,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   // --- Carousel ---
-                  const TCarouselSlider(banners: [
-                    TImages.banner1,
-                    TImages.banner2,
-                    TImages.banner3
-                  ]),
+                  const TCarouselSlider(banners: [TImages.banner1, TImages.banner2, TImages.banner3]),
                   const SizedBox(height: TSizes.spaceAntaraSection),
 
                   TSectionHeading(

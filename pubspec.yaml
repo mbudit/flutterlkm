@@ -53,6 +53,7 @@ flutter:
     - assets/icons/hospital/
     - assets/images/onboarding_images/
     - assets/images/animations/
+    - assets/images/user/
    
 
   #--------------- LOCAL FONTS ------------------#
