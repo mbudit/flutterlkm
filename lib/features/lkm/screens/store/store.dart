@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutterlkm/common/widgets/appbar/appbar.dart';
+import 'package:flutterlkm/common/widgets/appbar/tabbar.dart';
 import 'package:flutterlkm/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:flutterlkm/common/widgets/images/circular_image.dart';
-import 'package:flutterlkm/common/widgets/images/rounded_container.dart';
+import 'package:flutterlkm/common/widgets/subitem/subitem_card/subitem_card.dart';
+import 'package:flutterlkm/common/widgets/layouts/grid_layout.dart';
 import 'package:flutterlkm/common/widgets/notification/icon/notif_menu_icon.dart';
 import 'package:flutterlkm/common/widgets/texts/section_heading.dart';
+import 'package:flutterlkm/features/lkm/screens/store/widgets/category_tab.dart';
 import 'package:flutterlkm/utils/constants/colors.dart';
-import 'package:flutterlkm/utils/constants/image_strings.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
 import 'package:flutterlkm/utils/helpers/helper_functions.dart';
 
@@ -17,12 +18,14 @@ class StoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
 
-    return Scaffold(
-      appBar: TAppBar(
-        title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
-        actions: [TNotifCounterIcon(onPressed: () {})],
-      ),
-      body: NestedScrollView(
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        appBar: TAppBar(
+          title: Text('Keluhan', style: Theme.of(context).textTheme.headlineMedium),
+          actions: [TNotifCounterIcon(onPressed: () {})],
+        ),
+        body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
               SliverAppBar(
@@ -39,11 +42,7 @@ class StoreScreen extends StatelessWidget {
                     children: [
                       /// -- Search Bar
                       const SizedBox(height: TSizes.spaceAntaraItem),
-                      const TSearchContainer(
-                          text: 'Pencarian',
-                          showBackground: false,
-                          showBorder: true,
-                          padding: EdgeInsets.zero),
+                      const TSearchContainer(text: 'Pencarian', showBackground: false, showBorder: true, padding: EdgeInsets.zero),
                       const SizedBox(height: TSizes.spaceAntaraSection),
 
                       /// -- Featured Brands Heading
@@ -55,30 +54,38 @@ class StoreScreen extends StatelessWidget {
                       const SizedBox(height: TSizes.spaceAntaraItem / 1.5),
 
                       /// -- Brands
-                      TRoundedContainer(
-                        padding: const EdgeInsets.all(TSizes.sm),
-                        showBorder: true,
-                        backgroundColor: Colors.transparent,
-                        child: Row(
-                          children: [
-                            // -- Gambar Brand
-                            TCircularImage(
-                              image: TImages.hospitalIcon,
-                              isNetworkImage: false,
-                              backgroundColor: Colors.transparent,
-                              overlayColor:
-                                  dark ? TColors.white : TColors.black,
-                            ),
-                          ],
-                        ),
-                      )
+                      /// Memakai grid layout
+                      TGridLayout(
+                        itemCount: 4,
+                        mainAxisExtent: 80,
+                        itemBuilder: (_, index) {
+                          return const TSubItemCard(
+                            showBorder: true,
+                          );
+                        },
+                      ),
                     ],
                   ),
                 ),
-              )
+
+                /// --- Tab Bar ----
+                bottom: const TTabBar(
+                  tabs: [
+                    Tab(child: Text('Sports')),
+                    Tab(child: Text('Furniture')),
+                    Tab(child: Text('Electronics')),
+                    Tab(child: Text('Clothes')),
+                    Tab(child: Text('Cosmetics')),
+                  ],
+                ),
+              ),
             ];
           },
-          body: Container()),
+          body: const TabBarView(
+            children: [TCategoryTab(), TCategoryTab(), TCategoryTab(), TCategoryTab(), TCategoryTab()],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -5,6 +5,7 @@ import 'package:flutterlkm/common/widgets/images/rounded_container.dart';
 import 'package:flutterlkm/common/widgets/images/rounded_images.dart';
 import 'package:flutterlkm/common/widgets/texts/product_price_text.dart';
 import 'package:flutterlkm/common/widgets/texts/product_title_text.dart';
+import 'package:flutterlkm/common/widgets/texts/subitem_title_text_with_icon.dart';
 import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/image_strings.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
@@ -64,7 +65,7 @@ class TItemCardVertical extends StatelessWidget {
                     top: 0,
                     right: 0,
                     child: TCircularIcon(
-                      icon: Iconsax.heart,
+                      icon: Iconsax.heart5,
                       color: Colors.red,
                     ),
                   )
@@ -74,38 +75,17 @@ class TItemCardVertical extends StatelessWidget {
             const SizedBox(height: TSizes.spaceAntaraItem / 2),
 
             /// --- Isian / Details ---
-            Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   /// --- Judul item ---
-                  const TItemTitleText(title: 'Hubungi kami!', smallSize: true),
-                  const SizedBox(height: TSizes.spaceAntaraItem / 2),
-                  Row(
-                    children: [
-                      
-                      /// --- Subjudul Item ---
-                      Text(
-                        'Test Text',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelMedium
-                            ?.copyWith(fontSize: 14),
-                      ),
-                      const SizedBox(width: TSizes.xs),
+                  TItemTitleText(title: 'Hubungi kami!', smallSize: true),
+                  SizedBox(height: TSizes.spaceAntaraItem / 2),
 
-                      /// --- Icon samping subjudul ---
-                      const Icon(
-                        Iconsax.verify5,
-                        color: TColors.appPrimary,
-                        size: TSizes.iconXs,
-                      )
-                    ],
-                  ),
+                  // ---- Subjudul Item dengan iconnya ---
+                  TSubItemTitleTextWithIcon(title: 'Test text', textAlign: TextAlign.start,),
                 ],
               ),
             ),
@@ -115,7 +95,6 @@ class TItemCardVertical extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
                 /// --- Price tag (kalo dipake sih) ---
                 const Padding(
                   padding: EdgeInsets.only(left: TSizes.sm),
@@ -148,3 +127,5 @@ class TItemCardVertical extends StatelessWidget {
     );
   }
 }
+
+

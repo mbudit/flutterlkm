@@ -45,6 +45,7 @@ class HomeScreen extends StatelessWidget {
                         TSectionHeading(
                           title: 'Klinik dan Puskesmas',
                           showActionButton: false,
+                          textColor: TColors.white,
                         ),
                         SizedBox(height: TSizes.spaceAntaraItem),
 
