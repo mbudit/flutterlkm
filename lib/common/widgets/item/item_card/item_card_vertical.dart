@@ -36,39 +36,39 @@ class TItemCardVertical extends StatelessWidget {
               height: 180,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
-              child: Stack(
+              child: const Stack(
                 children: [
                   /// Thumbnail Image
-                  const TRoundedImage(
+                  TRoundedImage(
                     imageUrl: TImages.itemImage1,
                     applyImageRadius: true,
                   ),
 
                   /// Discount Tag
-                  Positioned(
-                    top: 12,
-                    child: TRoundedContainer(
-                      radius: TSizes.sm,
-                      backgroundColor: TColors.appSecondary.withOpacity(0.8),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: TSizes.sm, vertical: TSizes.xs),
-                      child: Text('25%',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelLarge
-                              ?.copyWith(color: TColors.black, fontSize: 12)),
-                    ),
-                  ),
+                  // Positioned(
+                  //   top: 12,
+                  //   child: TRoundedContainer(
+                  //     radius: TSizes.sm,
+                  //     backgroundColor: TColors.appSecondary.withOpacity(0.8),
+                  //     padding: const EdgeInsets.symmetric(
+                  //         horizontal: TSizes.sm, vertical: TSizes.xs),
+                  //     child: Text('25%',
+                  //         style: Theme.of(context)
+                  //             .textTheme
+                  //             .labelLarge
+                  //             ?.copyWith(color: TColors.black, fontSize: 12)),
+                  //   ),
+                  // ),
 
                   /// Wishlist Button
-                  const Positioned(
-                    top: 0,
-                    right: 0,
-                    child: TCircularIcon(
-                      icon: Iconsax.heart5,
-                      color: Colors.red,
-                    ),
-                  )
+                  // Positioned(
+                  //   top: 0,
+                  //   right: 0,
+                  //   child: TCircularIcon(
+                  //     icon: Iconsax.heart5,
+                  //     color: Colors.red,
+                  //   ),
+                  // )
                 ],
               ),
             ),
@@ -78,49 +78,49 @@ class TItemCardVertical extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   /// --- Judul item ---
-                  TItemTitleText(title: 'Hubungi kami!', smallSize: true),
+                  TItemTitleText(title: 'Pesan hari ini', smallSize: true),
                   SizedBox(height: TSizes.spaceAntaraItem / 2),
 
                   // ---- Subjudul Item dengan iconnya ---
-                  TSubItemTitleTextWithIcon(title: 'Test text', textAlign: TextAlign.start,),
+                  TSubItemTitleTextWithIcon(title: 'Lorem ipsum dolor sit amel', textAlign: TextAlign.center, maxLines: 2,),
                 ],
               ),
             ),
 
             const Spacer(),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                /// --- Price tag (kalo dipake sih) ---
-                const Padding(
-                  padding: EdgeInsets.only(left: TSizes.sm),
-                  child: TItemPriceTag(
-                    priceTag: '1.000',
-                  ),
-                ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     /// --- Price tag (kalo dipake sih) ---
+            //     const Padding(
+            //       padding: EdgeInsets.only(left: TSizes.sm),
+            //       child: TItemPriceTag(
+            //         priceTag: '1.000',
+            //       ),
+            //     ),
 
-                /// --- Button plus dalam item ---
-                Container(
-                  decoration: const BoxDecoration(
-                    color: TColors.dark,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(TSizes.cardRadiusMd),
-                      bottomRight: Radius.circular(TSizes.itemImageRadius),
-                    ),
-                  ),
-                  child: const SizedBox(
-                    width: TSizes.iconLg * 1.2,
-                    height: TSizes.iconLg * 1.2,
-                    child:
-                        Center(child: Icon(Iconsax.add, color: TColors.white)),
-                  ),
-                ),
-              ],
-            ),
+            //     /// --- Button plus dalam item ---
+            //     Container(
+            //       decoration: const BoxDecoration(
+            //         color: TColors.dark,
+            //         borderRadius: BorderRadius.only(
+            //           topLeft: Radius.circular(TSizes.cardRadiusMd),
+            //           bottomRight: Radius.circular(TSizes.itemImageRadius),
+            //         ),
+            //       ),
+            //       child: const SizedBox(
+            //         width: TSizes.iconLg * 1.2,
+            //         height: TSizes.iconLg * 1.2,
+            //         child:
+            //             Center(child: Icon(Iconsax.add, color: TColors.white)),
+            //       ),
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       ),

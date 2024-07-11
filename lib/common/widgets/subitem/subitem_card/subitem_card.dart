@@ -11,10 +11,12 @@ class TSubItemCard extends StatelessWidget {
     super.key,
     required this.showBorder,
     this.onTap,
+    required this.title,
   });
 
   final bool showBorder;
   final void Function()? onTap;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class TSubItemCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TSubItemTitleTextWithIcon(title: 'Test', subItemTextSize: TextSizes.large),
+                  TSubItemTitleTextWithIcon(title: title, subItemTextSize: TextSizes.large),
                   Text(
                     '256 Products',
                     overflow: TextOverflow.ellipsis,

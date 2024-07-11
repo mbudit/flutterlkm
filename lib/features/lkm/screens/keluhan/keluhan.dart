@@ -1,91 +1,123 @@
 import 'package:flutter/material.dart';
 import 'package:flutterlkm/common/widgets/appbar/appbar.dart';
-import 'package:flutterlkm/common/widgets/appbar/tabbar.dart';
-import 'package:flutterlkm/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:flutterlkm/common/widgets/subitem/subitem_card/subitem_card.dart';
-import 'package:flutterlkm/common/widgets/layouts/grid_layout.dart';
-import 'package:flutterlkm/common/widgets/notification/icon/notif_menu_icon.dart';
 import 'package:flutterlkm/common/widgets/texts/section_heading.dart';
-import 'package:flutterlkm/features/lkm/screens/store/widgets/category_tab.dart';
 import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
-import 'package:flutterlkm/utils/helpers/helper_functions.dart';
+import 'package:iconsax/iconsax.dart';
 
 class KeluhanScreen extends StatelessWidget {
   const KeluhanScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-
-    return DefaultTabController(
-      length: 5,
-      child: Scaffold(
-        appBar: TAppBar(
-          title: Text('Keluhan', style: Theme.of(context).textTheme.headlineMedium),
-          actions: [TNotifCounterIcon(onPressed: () {})],
+    return Scaffold(
+      appBar: TAppBar(
+        title: Text(
+          'Keluhan',
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
-        body: NestedScrollView(
-          headerSliverBuilder: (_, innerBoxIsScrolled) {
-            return [
-              SliverAppBar(
-                automaticallyImplyLeading: false,
-                pinned: true,
-                floating: true,
-                backgroundColor: dark ? TColors.black : TColors.white,
-                expandedHeight: 440,
-                flexibleSpace: Padding(
-                  padding: const EdgeInsets.all(TSizes.defaultSpace),
-                  child: ListView(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
+      ),
+      body: const SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(TSizes.defaultSpace),
+          child: Column(
+            children: [
+              /// --- Header ---
+              TSectionHeading(title: 'Apa keluhanmu hari ini?', showActionButton: false),
+              SizedBox(height: TSizes.spaceAntaraItem),
+
+              /// --- Kumpulan keluhan biasa
+              CheckBoxGrid(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CheckBoxGrid extends StatefulWidget {
+  const CheckBoxGrid({super.key});
+
+  @override
+  _CheckBoxGridState createState() => _CheckBoxGridState();
+}
+
+class _CheckBoxGridState extends State<CheckBoxGrid> {
+  List<Map> keluhan = [
+    {"name": "Pusing", "isChecked": false},
+    {"name": "Suhu Panas", "isChecked": false},
+    {"name": "Mual", "isChecked": false},
+    {"name": "Nyeri otot", "isChecked": false},
+    {"name": "Pilek", "isChecked": false},
+    {"name": "Batuk", "isChecked": false}
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Column(
+            children: keluhan.map((favorite) {
+          return CheckboxListTile(
+              activeColor: TColors.appPrimary,
+              checkboxShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+              title: Text(favorite['name']),
+              value: favorite['isChecked'],
+              onChanged: (val) {
+                setState(() {
+                  favorite['isChecked'] = val;
+                });
+              });
+        }).toList()),
+        const SizedBox(height: TSizes.spaceAntaraItem / 2),
+        const Divider(),
+        const SizedBox(height: TSizes.spaceAntaraItem),
+        Wrap(
+          children: keluhan.map((favorite) {
+            if (favorite['isChecked'] == true) {
+              return Card(
+                elevation: 3,
+                color: TColors.appAccent,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      /// -- Search Bar
-                      const SizedBox(height: TSizes.spaceAntaraItem),
-                      const TSearchContainer(text: 'Pencarian', showBackground: false, showBorder: true, padding: EdgeInsets.zero),
-                      const SizedBox(height: TSizes.spaceAntaraSection),
-
-                      /// -- Featured Brands Heading
-                      TSectionHeading(
-                        title: 'Featured Brands',
-                        textColor: TColors.black,
-                        onPressed: () {},
-                      ),
-                      const SizedBox(height: TSizes.spaceAntaraItem / 1.5),
-
-                      /// -- Brands
-                      /// Memakai grid layout
-                      TGridLayout(
-                        itemCount: 4,
-                        mainAxisExtent: 80,
-                        itemBuilder: (_, index) {
-                          return const TSubItemCard(
-                            showBorder: true,
-                          );
+                      Text(favorite['name'], style: const TextStyle(color: TColors.white)),
+                      const SizedBox(width: TSizes.spaceAntaraItem),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            favorite['isChecked'] = !favorite['isChecked'];
+                          });
                         },
+                        child: const Icon(
+                          Iconsax.trash,
+                          color: TColors.white,
+                        ),
                       ),
                     ],
                   ),
                 ),
-
-                /// --- Tab Bar ----
-                bottom: const TTabBar(
-                  tabs: [
-                    Tab(child: Text('Sports')),
-                    Tab(child: Text('Furniture')),
-                    Tab(child: Text('Electronics')),
-                    Tab(child: Text('Clothes')),
-                    Tab(child: Text('Cosmetics')),
-                  ],
-                ),
-              ),
-            ];
-          },
-          body: const TabBarView(
-            children: [TCategoryTab(), TCategoryTab(), TCategoryTab(), TCategoryTab(), TCategoryTab()],
+              );
+            }
+            return Container();
+          }).toList(),
+        ),
+        const SizedBox(height: TSizes.defaultSpace),
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: TColors.appSecondary,
+              side: const BorderSide(color: TColors.appSecondary),
+            ),
+            onPressed: () {},
+            child: const Text("Panggil Layanan Kesehatan"),
           ),
         ),
-      ),
+      ],
     );
   }
 }

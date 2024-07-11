@@ -16,21 +16,16 @@ class TLoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: TSizes.spaceAntaraSection),
+        padding: const EdgeInsets.symmetric(vertical: TSizes.spaceAntaraSection),
         child: Column(
           children: [
             // Email
             TextFormField(
-              decoration: const InputDecoration(
-                  prefixIcon: Icon(Iconsax.direct_right),
-                  labelText: "Masukkan email anda"),
+              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: "Masukkan email anda"),
             ),
-    
-            const SizedBox(
-              height: TSizes.spaceAntaraItem,
-            ),
-    
+
+            const SizedBox(height: TSizes.spaceAntaraItem),
+
             TextFormField(
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.password_check),
@@ -39,28 +34,24 @@ class TLoginForm extends StatelessWidget {
               ),
               obscureText: true,
             ),
-    
+
             // Checkbox remember me dan button Forgot Password
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Ingat saya
                 Row(
-                  children: [
-                    Checkbox(value: true, onChanged: (value) {}),
-                    const Text("Ingat saya")
-                  ],
+                  children: [Checkbox(value: true, onChanged: (value) {}), const Text("Ingat saya")],
                 ),
-    
+
                 // Lupa password
                 TextButton(
                   onPressed: () => Get.to(() => const ForgetPassword()),
-                  child: const Text("Lupa Password",
-                      style: TextStyle(fontSize: 14)),
+                  child: const Text("Lupa Password", style: TextStyle(fontSize: 14)),
                 )
               ],
             ),
-    
+
             // Button "Masuk"
             SizedBox(
               width: double.infinity,
@@ -73,11 +64,9 @@ class TLoginForm extends StatelessWidget {
                 child: const Text("Masuk"),
               ),
             ),
-    
-            const SizedBox(
-              height: TSizes.spaceAntaraItem,
-            ),
-    
+
+            const SizedBox(height: TSizes.spaceAntaraItem),
+
             // Button "Daftar"
             SizedBox(
               width: double.infinity,

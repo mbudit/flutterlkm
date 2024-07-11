@@ -70,9 +70,11 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceAntaraSection),
 
                   TSectionHeading(
-                    title: 'Popular Products',
+                    textAlign: TextAlign.center,
+                    title: 'Message of the day',
                     textColor: TColors.black,
                     onPressed: () {},
+                    showActionButton: false,
                   ),
                   const SizedBox(height: TSizes.spaceAntaraItem),
 

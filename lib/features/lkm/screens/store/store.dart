@@ -60,7 +60,7 @@ class StoreScreen extends StatelessWidget {
                         mainAxisExtent: 80,
                         itemBuilder: (_, index) {
                           return const TSubItemCard(
-                            showBorder: true,
+                            showBorder: true, title: 'Keluhan',
                           );
                         },
                       ),

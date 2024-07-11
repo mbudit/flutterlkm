@@ -24,7 +24,7 @@ class TSubItemShowcase extends StatelessWidget {
       child: Column(
         children: [
           /// --- Brand with item count
-          const TSubItemCard(showBorder: false),
+          const TSubItemCard(showBorder: false, title: 'Test',),
 
           const SizedBox(height: TSizes.spaceAntaraSection),
 
