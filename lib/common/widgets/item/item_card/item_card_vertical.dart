@@ -13,7 +13,14 @@ import 'package:flutterlkm/utils/helpers/helper_functions.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TItemCardVertical extends StatelessWidget {
-  const TItemCardVertical({super.key});
+  const TItemCardVertical({
+    super.key,
+    required this.itemTitle,
+    required this.itemSubtitle,
+    required this.image,
+  });
+
+  final String itemTitle, itemSubtitle, image;
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +43,11 @@ class TItemCardVertical extends StatelessWidget {
               height: 180,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
-              child: const Stack(
+              child: Stack(
                 children: [
                   /// Thumbnail Image
                   TRoundedImage(
-                    imageUrl: TImages.itemImage1,
+                    imageUrl: image,
                     applyImageRadius: true,
                   ),
 
@@ -75,17 +82,22 @@ class TItemCardVertical extends StatelessWidget {
             const SizedBox(height: TSizes.spaceAntaraItem / 2),
 
             /// --- Isian / Details ---
-            const Padding(
+            Padding(
+              // ignore: prefer_const_constructors
               padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   /// --- Judul item ---
-                  TItemTitleText(title: 'Pesan hari ini', smallSize: true),
-                  SizedBox(height: TSizes.spaceAntaraItem / 2),
+                  TItemTitleText(title: itemTitle, smallSize: true),
+                  const SizedBox(height: TSizes.spaceAntaraItem / 2),
 
                   // ---- Subjudul Item dengan iconnya ---
-                  TSubItemTitleTextWithIcon(title: 'Lorem ipsum dolor sit amel', textAlign: TextAlign.center, maxLines: 2,),
+                  TSubItemTitleTextWithIcon(
+                    title: itemSubtitle,
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                  ),
                 ],
               ),
             ),
@@ -127,5 +139,3 @@ class TItemCardVertical extends StatelessWidget {
     );
   }
 }
-
-

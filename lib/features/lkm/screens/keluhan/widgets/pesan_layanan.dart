@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterlkm/features/lkm/screens/keluhan/keluhan.dart';
+import 'package:flutterlkm/navigation_menu.dart';
 import 'package:flutterlkm/utils/constants/image_strings.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
 import 'package:flutterlkm/utils/constants/text_strings.dart';
 import 'package:flutterlkm/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
 
-class ResetPassword extends StatelessWidget {
-  const ResetPassword({super.key});
+class PesanLayananScreen extends StatelessWidget {
+  const PesanLayananScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +31,14 @@ class ResetPassword extends StatelessWidget {
 
               // Title dan Subtitle
               Text(
-                TTexts.changeYourPasswordTitle,
+                TTexts.layananPesanTitle,
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontSize: 22),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: TSizes.spaceAntaraItem),
 
               Text(
-                TTexts.changeYourPasswordSubTitle,
+                TTexts.layananPesanSubTitle,
                 style: Theme.of(context).textTheme.labelMedium?.copyWith(fontSize: 12),
                 textAlign: TextAlign.center,
               ),
@@ -45,21 +47,12 @@ class ResetPassword extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text(TTexts.done),
+                  onPressed: () => Get.off(() => const NavigationMenu()),
+                  child: const Text('Kembali'),
                 ),
               ),
               const SizedBox(height: TSizes.spaceAntaraItem),
-              SizedBox(
-                width: double.infinity,
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    TTexts.resendEmail,
-                    style: TextStyle(fontSize: 15),
-                  ),
-                ),
-              ),
+              
             ],
           ),
         ),

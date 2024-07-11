@@ -68,4 +68,8 @@ class TTexts {
   static const String hospitalLocation = "Rumah sakit terdekat";
   static const String hospitalNews = "Berita Terkini";
 
+  // -- Keluhan
+  static const String layananPesanTitle = "Keluhan diproses!";
+  static const String layananPesanSubTitle = "Mohon tunggu selagi kita memproses keluhan anda dan menyalurkannnya ke layanan kesehatan masyarakat yang terdekat";
+
 }

@@ -35,6 +35,8 @@ class TImages {
 
   // -- Gambar Item
   static const String itemImage1 = "assets/images/items/cyborg-siren-1.png";
+  static const String itemImage3 = "assets/images/items/sammy-doctors-consultation.png";
+
 
   // -- GAmbar User
   static const String userImage = "assets/images/user/user.png";

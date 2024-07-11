@@ -81,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                   // --- Item Card ---
                   TGridLayout(
                     itemCount: 4,
-                    itemBuilder: (_, index) => const TItemCardVertical(),
+                    itemBuilder: (_, index) => const TItemCardVertical(itemTitle: 'Pesan hari ini', itemSubtitle: 'Lorem ipsum dolor amet', image: TImages.itemImage1,),
                   ),
                 ],
               ),
