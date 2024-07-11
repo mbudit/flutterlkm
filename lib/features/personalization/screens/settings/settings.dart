@@ -4,8 +4,10 @@ import 'package:flutterlkm/common/widgets/custom_shapes/containers/primary_heade
 import 'package:flutterlkm/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:flutterlkm/common/widgets/list_tile/user_profile_header.dart';
 import 'package:flutterlkm/common/widgets/texts/section_heading.dart';
+import 'package:flutterlkm/features/personalization/screens/profile/profile.dart';
 import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -27,7 +29,7 @@ class SettingsScreen extends StatelessWidget {
                   ),
 
                   // --- User Header ---
-                  const TUserProfileHeader(),
+                  TUserProfileHeader(onPressed: () => Get.to(() => const ProfileScreen()),),
                   const SizedBox(height: TSizes.spaceAntaraSection),
                 ],
               ),
@@ -61,7 +63,7 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceAntaraSection),
                   SizedBox(
                     width: double.infinity,
-                    child: OutlinedButton(onPressed: (){}, child: const Text('Logout')),
+                    child: OutlinedButton(onPressed: () {}, child: const Text('Logout')),
                   ),
                   const SizedBox(height: TSizes.spaceAntaraSection),
                 ],

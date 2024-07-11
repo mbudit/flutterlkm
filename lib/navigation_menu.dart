@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutterlkm/features/lkm/screens/home/home.dart';
+import 'package:flutterlkm/features/lkm/screens/keluhan/keluhan.dart';
 import 'package:flutterlkm/features/lkm/screens/store/store.dart';
 import 'package:flutterlkm/features/lkm/screens/wishlist/wishlist.dart';
-import 'package:flutterlkm/features/personalization/settings/settings.dart';
+import 'package:flutterlkm/features/personalization/screens/settings/settings.dart';
 import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
@@ -50,7 +51,7 @@ class NavigationController extends GetxController{
 
   final screens = [
     const HomeScreen(),
-    const StoreScreen(),
+    const KeluhanScreen(),
     const WishlistScreen(),
     const SettingsScreen(),
   ];

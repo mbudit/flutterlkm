@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterlkm/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:flutterlkm/common/widgets/images/rounded_images.dart';
-import 'package:flutterlkm/features/lkm/controlles/home_controller.dart';
+import 'package:flutterlkm/features/lkm/controllers/home_controller.dart';
 import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
 import 'package:get/get.dart';
