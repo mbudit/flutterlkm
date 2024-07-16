@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterlkm/common/widgets/image_text_widgets.dart/vertical_image_text.dart';
+import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/image_strings.dart';
 
 class THomeHospitalList extends StatelessWidget {
@@ -19,6 +20,7 @@ class THomeHospitalList extends StatelessWidget {
           return TVerticalImageText(
             image: TImages.hospitalIcon,
             title: 'Rumah Sakit',
+            backgroundColor: TColors.white,
             onTap: (){},
           );
         },

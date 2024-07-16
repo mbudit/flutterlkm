@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutterlkm/common/widgets/images/circular_image.dart';
 import 'package:flutterlkm/common/widgets/images/rounded_container.dart';
 import 'package:flutterlkm/common/widgets/texts/subitem_title_text_with_icon.dart';
+import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/enums.dart';
 import 'package:flutterlkm/utils/constants/image_strings.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
+import 'package:flutterlkm/utils/helpers/helper_functions.dart';
 
 class TSubItemCard extends StatelessWidget {
   const TSubItemCard({
@@ -18,6 +20,7 @@ class TSubItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: TRoundedContainer(
@@ -43,11 +46,11 @@ class TSubItemCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TSubItemTitleTextWithIcon(title: 'Test', subItemTextSize: TextSizes.large),
+                  TSubItemTitleTextWithIcon(title: 'Test', subItemTextSize: TextSizes.large, textColor: dark ? TColors.white : TColors.black,),
                   Text(
                     '256 Products',
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.labelMedium?.copyWith(fontSize: 12),
+                    style: Theme.of(context).textTheme.labelMedium?.copyWith(fontSize: 12, color: dark ? TColors.white : TColors.black),
                   )
                 ],
               ),

@@ -3,7 +3,7 @@ import 'package:flutterlkm/common/widgets/appbar/appbar.dart';
 import 'package:flutterlkm/common/widgets/icons/circular_icon.dart';
 import 'package:flutterlkm/common/widgets/item/item_card/item_card_vertical.dart';
 import 'package:flutterlkm/common/widgets/layouts/grid_layout.dart';
-import 'package:flutterlkm/features/lkm/screens/home/home.dart';
+import 'package:flutterlkm/navigation_menu.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -23,7 +23,7 @@ class WishlistScreen extends StatelessWidget {
           TCircularIcon(
             icon: Iconsax.add,
             onPressed: () => Get.to(
-              const HomeScreen(),
+              const NavigationMenu(),
             ),
           ),
         ],

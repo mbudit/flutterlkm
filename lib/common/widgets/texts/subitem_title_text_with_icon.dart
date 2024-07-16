@@ -3,6 +3,7 @@ import 'package:flutterlkm/common/widgets/texts/subitem_title_text.dart';
 import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/enums.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
+import 'package:flutterlkm/utils/helpers/helper_functions.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TSubItemTitleTextWithIcon extends StatelessWidget {
@@ -24,6 +25,7 @@ class TSubItemTitleTextWithIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [

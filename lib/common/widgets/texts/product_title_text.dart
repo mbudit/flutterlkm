@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterlkm/utils/constants/colors.dart';
+import 'package:flutterlkm/utils/helpers/helper_functions.dart';
 
 class TItemTitleText extends StatelessWidget {
   const TItemTitleText({
@@ -16,9 +18,10 @@ class TItemTitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Text(
       title,
-      style: smallSize ? Theme.of(context).textTheme.labelLarge?.copyWith(fontSize: 14) : Theme.of(context).textTheme.titleSmall,
+      style: smallSize ? Theme.of(context).textTheme.labelLarge?.copyWith(fontSize: 14, color: TColors.black) : Theme.of(context).textTheme.titleSmall,
       overflow: TextOverflow.ellipsis,
       maxLines: maxLines,
       textAlign: textAlign,

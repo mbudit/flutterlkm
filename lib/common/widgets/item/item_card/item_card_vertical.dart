@@ -50,13 +50,8 @@ class TItemCardVertical extends StatelessWidget {
                     child: TRoundedContainer(
                       radius: TSizes.sm,
                       backgroundColor: TColors.appSecondary.withOpacity(0.8),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: TSizes.sm, vertical: TSizes.xs),
-                      child: Text('25%',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelLarge
-                              ?.copyWith(color: TColors.black, fontSize: 12)),
+                      padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
+                      child: Text('25%', style: Theme.of(context).textTheme.labelLarge?.copyWith(color: dark ? TColors.white : TColors.black, fontSize: 12)),
                     ),
                   ),
 
@@ -78,14 +73,23 @@ class TItemCardVertical extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   /// --- Judul item ---
-                  TItemTitleText(title: 'Hubungi kami!', smallSize: true),
+                  TItemTitleText(
+                    title: 'Hubungi kami!',
+                    smallSize: true,
+                    textAlign: TextAlign.start,
+                  ),
                   SizedBox(height: TSizes.spaceAntaraItem / 2),
 
                   // ---- Subjudul Item dengan iconnya ---
-                  TSubItemTitleTextWithIcon(title: 'Test text', textAlign: TextAlign.start,),
+                  TSubItemTitleTextWithIcon(
+                    title: 'Test text',
+                    textAlign: TextAlign.start,
+                    textColor: TColors.black,
+                  ),
                 ],
               ),
             ),
@@ -100,6 +104,7 @@ class TItemCardVertical extends StatelessWidget {
                   padding: EdgeInsets.only(left: TSizes.sm),
                   child: TItemPriceTag(
                     priceTag: '1.000',
+                    textColor: TColors.black,
                   ),
                 ),
 
@@ -115,8 +120,7 @@ class TItemCardVertical extends StatelessWidget {
                   child: const SizedBox(
                     width: TSizes.iconLg * 1.2,
                     height: TSizes.iconLg * 1.2,
-                    child:
-                        Center(child: Icon(Iconsax.add, color: TColors.white)),
+                    child: Center(child: Icon(Iconsax.add, color: TColors.white)),
                   ),
                 ),
               ],
@@ -127,5 +131,3 @@ class TItemCardVertical extends StatelessWidget {
     );
   }
 }
-
-

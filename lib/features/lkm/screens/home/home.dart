@@ -10,12 +10,14 @@ import 'package:flutterlkm/features/lkm/screens/home/widgets/home_hospital_list.
 import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/image_strings.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
+import 'package:flutterlkm/utils/helpers/helper_functions.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -71,7 +73,7 @@ class HomeScreen extends StatelessWidget {
 
                   TSectionHeading(
                     title: 'Popular Products',
-                    textColor: TColors.black,
+                    textColor: dark ? TColors.white : TColors.black,
                     onPressed: () {},
                   ),
                   const SizedBox(height: TSizes.spaceAntaraItem),

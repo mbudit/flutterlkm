@@ -22,7 +22,7 @@ class StoreScreen extends StatelessWidget {
       length: 5,
       child: Scaffold(
         appBar: TAppBar(
-          title: Text('Keluhan', style: Theme.of(context).textTheme.headlineMedium),
+          title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
           actions: [TNotifCounterIcon(onPressed: () {})],
         ),
         body: NestedScrollView(
@@ -48,7 +48,7 @@ class StoreScreen extends StatelessWidget {
                       /// -- Featured Brands Heading
                       TSectionHeading(
                         title: 'Featured Brands',
-                        textColor: TColors.black,
+                        textColor: dark ? TColors.white : TColors.black,
                         onPressed: () {},
                       ),
                       const SizedBox(height: TSizes.spaceAntaraItem / 1.5),
