@@ -12,11 +12,13 @@ class TSubItemCard extends StatelessWidget {
     required this.showBorder,
     this.onTap,
     required this.title,
+    this.subtitle = 'Lorem ipsum',
   });
 
   final bool showBorder;
   final void Function()? onTap;
   final String title;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ class TSubItemCard extends StatelessWidget {
                 children: [
                   TSubItemTitleTextWithIcon(title: title, subItemTextSize: TextSizes.large),
                   Text(
-                    '256 Products',
+                    subtitle,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(fontSize: 12),
                   )

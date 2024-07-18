@@ -5,6 +5,11 @@ import 'package:flutterlkm/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:flutterlkm/common/widgets/list_tile/user_profile_header.dart';
 import 'package:flutterlkm/common/widgets/texts/section_heading.dart';
 import 'package:flutterlkm/features/personalization/screens/profile/profile.dart';
+import 'package:flutterlkm/features/personalization/screens/settings/widgets/alamat_page.dart';
+import 'package:flutterlkm/features/personalization/screens/settings/widgets/nik_page.dart';
+import 'package:flutterlkm/features/personalization/screens/settings/widgets/nohp_page.dart';
+import 'package:flutterlkm/features/personalization/screens/settings/widgets/password_page.dart';
+import 'package:flutterlkm/features/personalization/screens/settings/widgets/riwayat_page.dart';
 import 'package:flutterlkm/utils/constants/colors.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
 import 'package:get/get.dart';
@@ -29,7 +34,9 @@ class SettingsScreen extends StatelessWidget {
                   ),
 
                   // --- User Header ---
-                  TUserProfileHeader(onPressed: () => Get.to(() => const ProfileScreen()),),
+                  TUserProfileHeader(
+                    onPressed: () => Get.to(() => const ProfileScreen()),
+                  ),
                   const SizedBox(height: TSizes.spaceAntaraSection),
                 ],
               ),
@@ -43,17 +50,22 @@ class SettingsScreen extends StatelessWidget {
                   const TSectionHeading(title: 'Pengaturan Akun', showActionButton: false),
                   const SizedBox(height: TSizes.spaceAntaraItem),
 
-                  TSettingsMenuTile(icon: Iconsax.safe_home, title: 'Alamat', subtitle: 'Pengaturan alamat akun', onTap: () {}),
-                  TSettingsMenuTile(icon: Iconsax.mobile, title: 'Nomor handphone', subtitle: 'Pengaturan nomor telepon', onTap: () {}),
-                  TSettingsMenuTile(icon: Iconsax.profile_tick, title: 'NIK', subtitle: 'Pengaturan Nomor Induk Kewarganegaaran', onTap: () {}),
-                  TSettingsMenuTile(icon: Iconsax.health, title: 'Riwayat keluhan', subtitle: 'Riwayat dari seluruh keluhan anda', onTap: () {}),
-                  TSettingsMenuTile(icon: Iconsax.password_check, title: 'Kata sandi', subtitle: 'Pengaturan kata sandi untuk akun', onTap: () {}),
+                  TSettingsMenuTile(icon: Iconsax.safe_home, title: 'Alamat', subtitle: 'Pengaturan alamat akun', onTap: () => Get.to(() => const AlamatScreen())),
+                  TSettingsMenuTile(icon: Iconsax.mobile, title: 'Nomor handphone', subtitle: 'Pengaturan nomor telepon', onTap: () => Get.to(() => const HandphonePage())),
+                  TSettingsMenuTile(icon: Iconsax.profile_tick, title: 'NIK', subtitle: 'Pengaturan Nomor Induk Kewarganegaaran', onTap: () => Get.to(() => const NikPage())),
+                  TSettingsMenuTile(icon: Iconsax.health, title: 'Riwayat keluhan', subtitle: 'Riwayat dari seluruh keluhan anda', onTap: () => Get.to(() => const RiwayatPage())),
+                  TSettingsMenuTile(icon: Iconsax.password_check, title: 'Kata sandi', subtitle: 'Pengaturan kata sandi untuk akun', onTap: () => Get.to(() => const PasswordPage())),
 
                   // -- App Settings --
                   const SizedBox(height: TSizes.spaceAntaraSection),
                   const TSectionHeading(title: 'Pengaturan Aplikasi', showActionButton: false),
                   const SizedBox(height: TSizes.spaceAntaraItem),
-                  const TSettingsMenuTile(icon: Iconsax.document_upload, title: 'Load Data', subtitle: 'Upload datamu ke Firebase Cloud'),
+                  TSettingsMenuTile(
+                    onTap: () {},
+                    icon: Iconsax.document_upload,
+                    title: 'Load Data',
+                    subtitle: 'Upload datamu ke Firebase Cloud',
+                  ),
                   TSettingsMenuTile(
                     icon: Iconsax.location,
                     title: 'Geolocation',

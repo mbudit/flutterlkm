@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutterlkm/common/styles/shadow_styles.dart';
-import 'package:flutterlkm/common/widgets/icons/circular_icon.dart';
+// import 'package:flutterlkm/common/widgets/icons/circular_icon.dart';
 import 'package:flutterlkm/common/widgets/images/rounded_container.dart';
 import 'package:flutterlkm/common/widgets/images/rounded_images.dart';
-import 'package:flutterlkm/common/widgets/texts/product_price_text.dart';
+// import 'package:flutterlkm/common/widgets/texts/product_price_text.dart';
 import 'package:flutterlkm/common/widgets/texts/product_title_text.dart';
 import 'package:flutterlkm/common/widgets/texts/subitem_title_text_with_icon.dart';
 import 'package:flutterlkm/utils/constants/colors.dart';
-import 'package:flutterlkm/utils/constants/image_strings.dart';
+// import 'package:flutterlkm/utils/constants/image_strings.dart';
 import 'package:flutterlkm/utils/constants/sizes.dart';
 import 'package:flutterlkm/utils/helpers/helper_functions.dart';
-import 'package:iconsax/iconsax.dart';
+// import 'package:iconsax/iconsax.dart';
 
 class TItemCardVertical extends StatelessWidget {
   const TItemCardVertical({
